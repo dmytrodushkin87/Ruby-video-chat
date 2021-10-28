@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @room.name %>
+</p>
+
+<div data-controller="video-chat"
+     data-video-chat-session="<%= session.id %>"
+     data-video-chat-id="<%= @room.id %>">
+  <video playsinline autoplay data-video-chat-target="local_video" style="height: 50%; width: 50%;"></video>
+
+  <div data-video-chat-target="remote_videos"></div>
+</div>
+
+
+<%= link_to 'Back', rooms_path %>
